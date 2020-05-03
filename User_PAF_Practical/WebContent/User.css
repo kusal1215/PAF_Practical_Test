@@ -1,0 +1,97 @@
+{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.navbar-nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: lighter;
+    padding: 0 20px;
+    font-family: 'Aclonica'
+}
+
+ul li:nth-child(2) a {
+    color: aqua;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+#nav-bar
+{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
+}
+.navbar-brand img
+{
+    height: 60px;
+    padding-left: 20px;
+}
+
+.navbar-nav li
+{
+    padding: 0 10px;
+}
+
+.navbar-nav li a
+{
+    float: right;
+    text-align: left;
+    font-family: 'Aclonica'
+}
+
+#nav-bar ul li a:hover
+{
+    color: #e12454 !important;
+}
+
+.navbar
+{
+    background: #fff;
+}
+.navbar-toggler
+{
+    border: none !important;
+}
+.nav-link
+{
+    color: #555!important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+
+#form-register
+{
+    background-image: linear-gradient(rgba(0,0,0,8),rgba(0,0,0,0.8)),url(2556c7f8-1fe3-42aa-bff8-d4d20c998dc0.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #efefef !important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#form-register h1
+{
+    text-align: center;
+    color: #fff !important;
+    padding-bottom: 40px;
+    font-family: 'Aclonica'
+}
+
+#form-register h1:after
+{
+    content: '';
+    background:#e12454;
+    display: block;
+    height: 5px;
+    width: 100px;
+    margin: 20px auto 5px;
+}
