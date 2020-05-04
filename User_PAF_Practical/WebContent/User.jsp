@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@page import="UserPackage.User"%>
+<%@page import="UserPackage.User"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                      <br>    
-		            <div id="divItemsGrid">
+		            <div id="divItemsGrid" style="overflow-x:auto;">
 							<%
 								User itemObj = new User();
 								out.print(itemObj.readUsers());

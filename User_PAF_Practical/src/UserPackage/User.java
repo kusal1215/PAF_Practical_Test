@@ -40,16 +40,11 @@ public class User {
 					}
 					
 					// Prepare the html table to be displayed
-					output = "<table class=\"table table-striped table-dark\" border='1'>"
+					output = "<table class=\'table table-striped table-dark\' border='1'>"
 							+ "<tr>"
-							+ "<th>NIC</th>"
-							+ "<th>Name</th>"
-							+ "<th>Gender</th>"
-							+ "<th>Contact Number</th>"
-							+ "<th>Email</th>"
-							+ "<th>Password</th>"
-							+ "<th>Update</th>"
-							+ "<th>Remove</th>"
+							+ "<th>NIC</th><th>Name</th><th>Gender</th>"
+							+ "<th>Contact Number</th><th>Email</th><th>Password</th>"
+							+ "<th>Update</th><th>Remove</th>"
 							+ "</tr>";
 					
 					String query = "select * from user"; // table name doctor
@@ -68,7 +63,7 @@ public class User {
 													
 									
 							// Add into the html table
-							output += "<tr><td><input id='hidItemIDUpdate'" + "	name='hidItemIDUpdate'" + " type='hidden' value='" + UserNic  + "'>" + UserNic + "</td>";
+							output += "<tr><td><input id='hidItemIDUpdate'name='hidItemIDUpdate' type='hidden' value='" + UserNic  + "'>" + UserNic + "</td>";
 							output += "<td>" + UserName + "</td>";
 							output += "<td>" + UserGender + "</td>";
 							output += "<td>" + UserContact + "</td>";
@@ -76,14 +71,8 @@ public class User {
 							output += "<td>" + UserPassword + "</td>";
 							
 							// buttons
-							output += "<td><input name='btnUpdate'"
-								   + "type='button' value='Update'"
-								   + "class='btnUpdate btn btn-success'></td>"
-								   + "<td><input name='btnRemove'"
-								   + "type='button' value='Remove'"
-								   + " class='btnRemove btn btn-danger'	"
-								   + "data-itemid='"
-							       + UserNic + "'>" + "</td></tr>";
+							output += "<td><input name='btnUpdate'type='button' value='Update'class='btnUpdate btn btn-success'></td>"
+									+ "<td><input name='btnRemove'type='button' value='Remove'class='btnRemove btn btn-danger'data-itemid='" + UserNic + "'></td></tr>";
 					}
 					con.close();
 					// Complete the html table
@@ -130,7 +119,7 @@ public class User {
 			con.close();
 
 			String newuser = readUsers();
-			output =  newuser;
+			output = "{\"status\":\"success\", \"data\": \"" + newuser + "\"}";
 
 		}
 		catch (Exception e)
@@ -171,7 +160,7 @@ public class User {
 			con.close();
 
 			String newuser = readUsers();
-			output =  newuser;
+			output = "{\"status\":\"success\", \"data\": \"" + newuser + "\"}";
 
 		}
 		catch (Exception e)
@@ -207,7 +196,7 @@ public class User {
 				con.close();
 				
 				String newuser = readUsers();
-				output =  newuser;
+				output = "{\"status\":\"success\", \"data\": \"" + newuser + "\"}";
 		}		
 		catch (Exception e)
 		{
