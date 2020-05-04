@@ -6,7 +6,8 @@
 <head>
 	<title>Register Form</title>
 	<link rel="stylesheet" href="User.css">
-	
+	<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="Views/bootstrap.min.css">
 	<script src="Components/jquery-3.2.1.min.js"></script>
@@ -93,9 +94,7 @@
 		            </div> 
             </div>
 
-    </section>
-                
-
+    </section>	
     
 </body>
 </html>

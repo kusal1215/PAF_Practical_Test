@@ -40,7 +40,7 @@ public class User {
 					}
 					
 					// Prepare the html table to be displayed
-					output = "<table class=\"table table-success\" border='1'>"
+					output = "<table class=\"table table-striped table-dark\" border='1'>"
 							+ "<tr>"
 							+ "<th>NIC</th>"
 							+ "<th>Name</th>"
@@ -78,7 +78,7 @@ public class User {
 							// buttons
 							output += "<td><input name='btnUpdate'"
 								   + "type='button' value='Update'"
-								   + "class='btnUpdate btn btn-secondary'></td>"
+								   + "class='btnUpdate btn btn-success'></td>"
 								   + "<td><input name='btnRemove'"
 								   + "type='button' value='Remove'"
 								   + " class='btnRemove btn btn-danger'	"
@@ -130,7 +130,7 @@ public class User {
 			con.close();
 
 			String newuser = readUsers();
-			output = "{\"status\":\"success\", \"data\": \"" + newuser + "\"}";
+			output =  newuser;
 
 		}
 		catch (Exception e)
@@ -171,7 +171,7 @@ public class User {
 			con.close();
 
 			String newuser = readUsers();
-			output = "{\"status\":\"success\", \"data\": \"" + newuser + "\"}";
+			output =  newuser;
 
 		}
 		catch (Exception e)
@@ -207,7 +207,7 @@ public class User {
 				con.close();
 				
 				String newuser = readUsers();
-				output = "{\"status\":\"success\", \"data\": \"" + newuser + "\"}";
+				output =  newuser;
 		}		
 		catch (Exception e)
 		{
