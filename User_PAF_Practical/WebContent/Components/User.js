@@ -28,7 +28,7 @@ $(document).on("click", "#btnSave", function(event) {
 		url : "UserAPI",
 		type : type,
 		data : $("#formItem").serialize(),
-		dataType : "json",
+		dataType : "text",
 		complete : function(response, status) {
 			onItemSaveComplete(response.responseText, status);
 		}
@@ -36,14 +36,36 @@ $(document).on("click", "#btnSave", function(event) {
 });
 
 function onItemSaveComplete(response, status) {
-	var resultSet = response;
-	console.log(resultSet);
-		$("#alertSuccess").text("Successfully saved.");
-		$("#alertSuccess").show();
-		$("#divItemsGrid").html(resultSet);
+	if (status == "success") 
+	{
+		var resultSet = JSON.parse(response);
+		
+		if (resultSet.status.trim() == "success") 
+		{
+			$("#alertSuccess").text("Successfully saved.");
+			$("#alertSuccess").show();
+			
+			$("#divItemsGrid").html(resultSet.data);
+			
+		} else if (resultSet.status.trim() == "error")
+		{
+			$("#alertError").text(resultSet.data);
+			$("#alertError").show();
+		}
+		
+	} else if (status == "error") 
+	{
+		$("#alertError").text("Error while saving.");
+		$("#alertError").show();
+		
+	} else 
+	{
+		$("#alertError").text("Unknown error while saving..");
+		$("#alertError").show();
+	}
 	
-$("#hidItemIDSave").val("");
-$("#formItem")[0].reset();
+	$("#hidItemIDSave").val("");
+	$("#formItem")[0].reset();
 }
 
 // UPDATE==========================================
@@ -76,7 +98,7 @@ $(document).on("click", ".btnRemove", function(event) {
 		url : "UserAPI",
 		type : "DELETE",
 		data : "UserNic=" + $(this).data("itemid"),
-		dataType : "json",
+		dataType : "text",
 		complete : function(response, status) {
 			onItemDeleteComplete(response.responseText, status);
 		}
@@ -84,14 +106,31 @@ $(document).on("click", ".btnRemove", function(event) {
 });
 
 function onItemDeleteComplete(response, status) {
-	var resultSet = response;
-	console.log(resultSet);
-		$("#alertSuccess").text("Successfully Deleted.");
-		$("#alertSuccess").show();
-		$("#divItemsGrid").html(resultSet);
-	
-$("#hidItemIDSave").val("");
-$("#formItem")[0].reset();
+	if (status == "success")
+	{
+		var resultSet = JSON.parse(response);
+		
+		if (resultSet.status.trim() == "success") 
+		{
+			$("#alertSuccess").text("Successfully deleted.");
+			$("#alertSuccess").show();
+			
+			$("#divItemsGrid").html(resultSet.data);
+			
+		} else if (resultSet.status.trim() == "error") 
+		{
+			$("#alertError").text(resultSet.data);
+			$("#alertError").show();
+		}
+	} else if (status == "error")
+	{
+		$("#alertError").text("Error while deleting.");
+		$("#alertError").show();	
+	} else 
+	{
+		$("#alertError").text("Unknown error while deleting..");
+		$("#alertError").show();
+	}
 	
 }
 //regex for validations================================================================================================================================
