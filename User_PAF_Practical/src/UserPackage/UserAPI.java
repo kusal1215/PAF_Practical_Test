@@ -61,7 +61,7 @@ public class UserAPI extends HttpServlet {
 		Map paras = getParasMap(request);
 		String output = UserObject.Updateusers(	paras.get("hidItemIDSave").toString(),
 												paras.get("UserContact").toString(),
-												paras.get("UserEmail").toString(),
+												paras.get("UserEmail").toString().replace("%", "@").replace("40", ""),
 												paras.get("UserPassword").toString()); 												
 		response.getWriter().write(output);
 	}
